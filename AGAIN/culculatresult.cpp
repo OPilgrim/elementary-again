@@ -61,3 +61,23 @@ float calculate(float a, float b, float c)//简单四则运算
 	}
 	return sum;
 }
+
+
+//print()函数需要从scan（）获取用户输入的答案
+//定义一个全局变量score用来记录总分，Number记录用户输入的题数
+int score = 0;
+void print()
+{
+/*	int result = calculateResult();
+	if (answer == result)
+	{
+		cout << "答对啦" << endl;     //这个地方要支持多语言
+		score++;
+	}
+	else
+		cout << "真遗憾，答错了。正确答案是：" << result << endl;
+*/
+	//我觉得这些都要放在scan里面，等所有的题目都完成之后再调用print（）
+	cout << "您一共答对了" << score << "道题，" << "有" << Number - score << "道题答错,要再接再厉哦！！" << endl;
+
+}
