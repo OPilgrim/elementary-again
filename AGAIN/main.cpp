@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	language_(language, language_1);
 	do
 	{
-		cout << language[0]<<endl;  //提示用户输入想要的题目数量
+		//cout << language[0]<<endl;  //提示用户输入想要的题目数量
 		cout << language[5] << endl;
 		score = 0;
 		Number = readFile(argv[1]);
@@ -51,8 +51,11 @@ int main(int argc, char *argv[])
 			sign_1 = randOperation(); sign_2 = randOperation(); sign_3 = randOperation();
 			bracket = randombracket();
 			str=gengerateExpression();   //str 存储运算式
+			writeFile_1(argv[2], str);   //把运算式写入文件
 			int result = calculatResult();
+			writeFile_2(argv[2], result);//把正确答案写入文件
 			int answer = scan();
+			writeFile_2(argv[2], answer);//把用户答案写入文件
 			if (answer == result)   //此处应有友情提示
 			{
 				cout << language[1]<<endl;  //提示用户答对了
@@ -63,9 +66,7 @@ int main(int argc, char *argv[])
 				cout << language[2]<<endl;  //提示用户答错了
 				cout << language[3] << result<<endl;  //正确答案应该是:
 			}
-			writeFile_1(argv[2], str);   //把运算式写入文件
-			writeFile_2(argv[2], result);//把正确答案写入文件
-			writeFile_2(argv[2], answer);//把用户答案写入文件
+			
 		}
 		print();
 		cout << language[4]; //提示用户按任意键继续还是按“e”结束
@@ -208,17 +209,17 @@ float calculate(float a, int b, float c)//简单四则运算
 
 int randomNumber()
 {
-	srand((unsigned)time(NULL));
-	return rand() % 11;
+	//srand((unsigned)time(NULL));
+	return rand() % 10+1;
 }
 int randOperation()
 {
-	srand((unsigned)time(NULL));
+//	srand((unsigned)time(NULL));
 	return rand() % 4+1;
 }
 int randombracket()
 {
-	srand((unsigned)time(NULL));
+//	srand((unsigned)time(NULL));
 	return rand() % 6+1;
 }
 
@@ -233,6 +234,7 @@ void writeFile_1(char* filepath,string x)
 	fstream fout;
 	fout.open(filepath,ios::app);
 	fout << x;
+	fout << '\n';
 	fout.close();
 	return;
 }
@@ -241,6 +243,7 @@ void writeFile_2(char* filepath, int x)
 	fstream fout;
 	fout.open(filepath, ios::app);
 	fout << x;
+	fout << '\n';
 	fout.close();
 	return;
 }
