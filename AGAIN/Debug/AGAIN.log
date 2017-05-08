@@ -1,0 +1,15 @@
+﻿  main.cpp
+c:\users\lenovo\desktop\again\again\main.cpp(151): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(153): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(158): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(160): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(165): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(167): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(172): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(174): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(179): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(181): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(184): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+c:\users\lenovo\desktop\again\again\main.cpp(189): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据
+  AGAIN.vcxproj -> C:\Users\lenovo\Desktop\AGAIN\Debug\AGAIN.exe
+  AGAIN.vcxproj -> C:\Users\lenovo\Desktop\AGAIN\Debug\AGAIN.pdb (Partial PDB)

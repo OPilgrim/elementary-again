@@ -1,0 +1,9 @@
+Please enter the number of questions you want:
+Congratulations, you're right!
+Sorry, wrong answer!
+The right answer should be:
+Press any key to continue and press "e".
+Ok, the problem is generating the library.
+You're right
+Problem is£¬
+Answer the wrong answer, want to make up again!!
