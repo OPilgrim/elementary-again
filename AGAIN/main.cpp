@@ -5,6 +5,7 @@
 #include<stdlib.h>
 #include<string>
 #include<math.h>
+#include"Language.h" //
 using namespace std;
 
 
@@ -13,9 +14,9 @@ string sign[5];
 int sign_1, sign_2, sign_3;  //决定符号,取值在1到4
 int bracket;//取值在1到6
 string language[10];
+class LANGUAGE lang;  //创建一个lang对象
 
-
-void language_(string *Resource, int language);
+//void language_(string *Resource, int language);
 int readFile(char* filepath);
 int scan();
 void Menu();
@@ -34,9 +35,10 @@ int main(int argc, char *argv[])
 	sign[1] = '+'; sign[2] = '-'; sign[3] = '*'; sign[4] = '/';
 	srand((unsigned)time(NULL));
 	Menu();
-	int language_1;
-	cin>> language_1;
-	language_(language, language_1);
+	int language_3;
+	cin>> language_3;
+	lang.set(language, language_3); 
+	lang.language_1();//写入提示语
 	do
 	{
 		//cout << language[0]<<endl;  //提示用户输入想要的题目数量
@@ -86,7 +88,7 @@ void Menu()
 	cout << "---------------------------------------------------------------------------------\n\n" << endl;
 }
 
-void language_(string *Resource, int language_1)    //读取语言
+/*void language_(string *Resource, int language_1)    //读取语言
 {
 	fstream File;
 	stringstream ss;
@@ -101,7 +103,7 @@ void language_(string *Resource, int language_1)    //读取语言
 		swap(Line,language[i]);   //把语句一条一条的复制到language数组里去
 	}
 	File.close();
-}
+}*/
 
 
 
