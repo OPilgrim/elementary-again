@@ -21,12 +21,21 @@
     <ClCompile Include="Language.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Language.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="File.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
