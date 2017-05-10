@@ -56,15 +56,16 @@ int main(int argc, char *argv[])
 		all_file.writeFile_2();  //把题目数写入文件
 		for (int i = 0; i < Number; i++)
 		{
-			string str;
+			string strp;
 			//number[0] = rand_.randomNumber(); number[1] = rand_.randomNumber(); number[2] = rand_.randomNumber(); number[3] = rand_.randomNumber();
 			//sign_1 =rand_.randOperation(); sign_2 = rand_.randOperation(); sign_3 = rand_.randOperation();
 			//bracket = rand_.randombracket();
 			//只要在这里加creat()
 			equa.set(argv[2]);
-			equa.creat();//生成数字、符号
+			//equa.creat();//生成数字、符号
 			equa.gengerateExpression();//生成算式
-			str = equa.get_();//gengerateExpression();   //str 存储运算式
+			strp = equa.get_();//gengerateExpression();   //str 存储运算式
+			cout << strp;
 			equa.calculatResult();   //计算
 			int result = equa.get();
 			int answer = scan();

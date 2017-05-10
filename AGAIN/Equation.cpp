@@ -11,7 +11,7 @@
 using namespace std;
 class Rand rand_; //创建一个Random对象
 class File all_f;//创建一个File对象
-//srand((unsigned)time(NULL));
+
 
 void Equation::creat()
 {
@@ -31,6 +31,7 @@ bracket = rand_.randombracket();//括号
 
 void Equation::gengerateExpression()
 {
+	creat();
 	stringstream ss;
 	if (bracket == 1)
 		ss << "(" << number[0] << sign[sign_1] << number[1] << ")" << sign[sign_2] << number[2] << sign[sign_3] << number[3] << "=";

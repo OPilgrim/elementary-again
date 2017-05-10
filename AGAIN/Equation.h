@@ -1,10 +1,13 @@
 #ifndef EQUATION_H
 #define EQUATION_H
+
 #include<iostream>
 #include<string>
 #include<sstream>
 #include<stdlib.h>
+#include<ctime>
 using namespace std;
+//srand((unsigned)time(NULL));
 
 class Equation
 {
@@ -17,8 +20,9 @@ private:
 	string S;
 	int Result;
 	char *argv;  //argv[2]µÄµØÖ·
-public:
 	void creat();
+public:
+	
 	void gengerateExpression();
 	void calculatResult();
 	void set(char* address)
