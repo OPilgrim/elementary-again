@@ -27,6 +27,9 @@
     <ClCompile Include="Random.cpp">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="Equation.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Language.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Random.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Equation.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

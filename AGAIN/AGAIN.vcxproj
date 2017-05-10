@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Equation.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Language.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Random.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Equation.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="Language.h" />
     <ClInclude Include="Random.h" />

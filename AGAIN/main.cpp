@@ -8,35 +8,37 @@
 #include"Language.h" //
 #include"File.h"
 #include"Random.h"
+#include"Equation.h"
 using namespace std;
 
 
-int number[4],Number,score=0;  //随机数，总题数，正确题数
-string sign[5];
-int sign_1, sign_2, sign_3;  //决定符号,取值在1到4
-int bracket;//取值在1到6
+int /*number[4],*/Number,score=0;  //随机数，总题数，正确题数
+//string sign[5];
+//int sign_1, sign_2, sign_3;  //决定符号,取值在1到4
+//int bracket;//取值在1到6
 string language[10];
 class LANGUAGE lang;  //创建一个lang对象
 class File all_file;//创建一个File对象
-class Rand rand_; //创建一个Random对象
+class Equation equa;
+//class Rand rand_; //创建一个Random对象
 
 //void language_(string *Resource, int language);
 //int readFile(char* filepath);
-int scan();
-void Menu();
 //int randomNumber();
 //int randOperation();
 //int randombracket();
-string gengerateExpression();
+//string gengerateExpression();
 //void writeFile_1(char* filepath, string x);
 //void writeFile_2(char* filepath,int x);
-int calculatResult();
+//int calculatResult();
+//float calculate(float a, int b, float c);
+int scan();
+void Menu();
 void print();
-float calculate(float a, int b, float c);
 
 int main(int argc, char *argv[])
 {
-	sign[1] = '+'; sign[2] = '-'; sign[3] = '*'; sign[4] = '/';
+	//sign[1] = '+'; sign[2] = '-'; sign[3] = '*'; sign[4] = '/';
 	srand((unsigned)time(NULL));
 	Menu();
 	int language_3;
@@ -55,11 +57,16 @@ int main(int argc, char *argv[])
 		for (int i = 0; i < Number; i++)
 		{
 			string str;
-			number[0] = rand_.randomNumber(); number[1] = rand_.randomNumber(); number[2] = rand_.randomNumber(); number[3] = rand_.randomNumber();
-			sign_1 =rand_.randOperation(); sign_2 = rand_.randOperation(); sign_3 = rand_.randOperation();
-			bracket = rand_.randombracket();
-			str=gengerateExpression();   //str 存储运算式
-			int result = calculatResult();
+			//number[0] = rand_.randomNumber(); number[1] = rand_.randomNumber(); number[2] = rand_.randomNumber(); number[3] = rand_.randomNumber();
+			//sign_1 =rand_.randOperation(); sign_2 = rand_.randOperation(); sign_3 = rand_.randOperation();
+			//bracket = rand_.randombracket();
+			//只要在这里加creat()
+			equa.set(argv[2]);
+			equa.creat();//生成数字、符号
+			equa.gengerateExpression();//生成算式
+			str = equa.get_();//gengerateExpression();   //str 存储运算式
+			equa.calculatResult();   //计算
+			int result = equa.get();
 			int answer = scan();
 			all_file.set_2(argv[2], answer);
 			all_file.writeFile_2();//把用户答案写入文件
@@ -128,7 +135,7 @@ int scan()
 	return answer;
 }
 
-string gengerateExpression()
+/*string gengerateExpression()
 {
 	stringstream ss;
 	if (bracket == 1)
@@ -149,9 +156,9 @@ string gengerateExpression()
 	all_file.set_1(argv[2], str);   //这边到时候要把argv[2]的指针传给generate
 	all_file.writeFile_1();   //把运算式写入文件writeFile_1(argv[2], str);   //把运算式写入文件
 	return str;
-}
+}*/
 
-int calculatResult()
+/*int calculatResult()
 {
 
 	float result;
@@ -192,15 +199,13 @@ int calculatResult()
 	}
 	else if (bracket == 6)
 		result = calculate(calculate(number[0], sign_1, number[1]),sign_2, calculate(number[2], sign_3, number[3]));
-	if(result<0)
-
 	if ((result - (int)result) >= 0.5)
 		result = result + 1;
 	all_file.set_2(argv[2], result); //到时候要传参给它
 	all_file.writeFile_2();//把正确答案写入文件
 	return result;
-}
-float calculate(float a, int b, float c)//简单四则运算
+}*/
+/*float calculate(float a, int b, float c)//简单四则运算
 {
 	float sum;
 	if(b==1)
@@ -216,7 +221,7 @@ float calculate(float a, int b, float c)//简单四则运算
 		sum = a / c;
 	}
 	return sum;
-}
+}*/
 
 /*int randomNumber()
 {
