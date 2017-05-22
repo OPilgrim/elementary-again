@@ -1,6 +1,5 @@
 #include"Random.h"
 #include"Equation.h"
-#include<math.h>
 #include<iostream>
 #include<ctime>
 #include<fstream>
@@ -8,10 +7,12 @@
 #include<string>
 #include<stdlib.h>
 #include<sstream>
+#include <stack>
 using namespace std;
 class Rand rand_; //创建一个Random对象
 class File all_f;//创建一个File对象
-
+stack<double> numstack;//数字栈
+stack<char> opstack;//符号栈
 
 void Equation::creat()
 {
@@ -50,9 +51,10 @@ void Equation::gengerateExpression()
 	S = str;
 	all_f.set_1(argv, str);   //这边到时候要把argv[2]的指针传给generate
 	all_f.writeFile_1();   //把运算式写入文件writeFile_1(argv[2], str);   //把运算式写入文件
+	calculatResult();
 }
 
-void Equation::calculatResult()
+/*void Equation::calculatResult()
 {
 	float result;
 	if (bracket == 1)
@@ -115,4 +117,88 @@ float Equation::calculate(float a, int b, float c)
 		sum = a / c;
 	}
 	return sum;
+}
+*/
+
+int Equation::compare(char x)
+{
+	switch (x)
+	{
+	case '*':
+	case '/': return 3;
+	case '-':
+	case '+': return 2;
+	case '(': return 1;
+	case ')': return -2;
+	default:return -1;
+	}
+}
+void Equation::calculatResult()
+{
+	double num_ = 0;
+	for(unsigned int i = 0; i < S.size(); i++)
+	{
+		if (S[i] >= '0'&&S[i] <= '9')
+		{
+			num_ = num_ * 10 + S[i] - '0';
+			if (i == S.size() - 1)
+				numstack.push(num_);
+		}
+		else
+		{
+			if (num_)
+			{
+				numstack.push(num_);
+				num_ = 0;
+			}
+			if (opstack.empty())
+				opstack.push(S[i]);
+			else if (S[i] == '(')
+				opstack.push(S[i]);
+			else if (S[i] == ')')
+			{
+				while (opstack.top() != '(')
+					calculate();
+				opstack.pop();
+			}
+			else if (S[i] == '=')
+				break;
+			else if (compare(S[i]) > compare(opstack.top()))  //比较优先级函数
+				opstack.push(S[i]);
+			else if (compare(S[i]) <= compare(opstack.top()))
+			{
+				calculate();  //运算函数
+				opstack.push(S[i]);
+			}
+			
+		}
+	}
+	while (!opstack.top())
+		calculate();
+	double result = numstack.top();
+	if ((result - (int)result) >= 0.5)
+		result = result + 1;
+	Result = result;
+	all_f.set_2(argv, result); //到时候要传参给它
+	all_f.writeFile_2();//把正确答案写入文件
+}
+
+void Equation::calculate()
+{
+	char p = opstack.top();
+	double a, b, result;
+	b = numstack.top();
+	numstack.pop();
+	a = numstack.top();
+	numstack.pop();
+	switch (p)
+	{
+	case '+':result = a + b; break;
+	case '-':result = a - b; break;
+	case '*':result = a*b; break;
+	case '/':result = a / b; break;
+	default: break;
+	}
+	numstack.push(result);
+	opstack.pop();
 }

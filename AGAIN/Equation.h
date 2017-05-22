@@ -16,15 +16,18 @@ private:
 	int sign_1, sign_2, sign_3;
 	int number[4];
 	int bracket;
-	float calculate(float a, int b, float c);
+	//float calculate(float a, int b, float c);
+	void calculate();
+	int compare(char x);
 	string S;
 	int Result;
 	char *argv;  //argv[2]µÄµØÖ·
 	void creat();
+	void calculatResult();
 public:
 	
 	void gengerateExpression();
-	void calculatResult();
+	
 	void set(char* address)
 	{
 		argv=address;
@@ -39,8 +42,5 @@ public:
 	}
 
 };
-
-
-
 #endif // !EQUATION_H
 

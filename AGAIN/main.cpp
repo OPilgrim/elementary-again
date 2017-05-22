@@ -64,9 +64,8 @@ int main(int argc, char *argv[])
 			equa.set(argv[2]);
 			//equa.creat();//生成数字、符号
 			equa.gengerateExpression();//生成算式
-			strp = equa.get_();//gengerateExpression();   //str 存储运算式
+			strp = equa.get_();//gengerateExpression();   //strp 存储运算式
 			cout << strp;
-			equa.calculatResult();   //计算
 			int result = equa.get();
 			int answer = scan();
 			all_file.set_2(argv[2], answer);
