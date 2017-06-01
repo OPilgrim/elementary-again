@@ -1,4 +1,5 @@
 ﻿  Equation.cpp
-c:\users\lenovo\desktop\again\again\equation.cpp(181): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\lenovo\desktop\again\again\equation.cpp(182): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
-LINK : fatal error LNK1168: 无法打开 C:\Users\lenovo\Desktop\AGAIN\Debug\AGAIN.exe 进行写入
+c:\users\lenovo\desktop\again\again\equation.cpp(180): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\lenovo\desktop\again\again\equation.cpp(181): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  AGAIN.vcxproj -> C:\Users\lenovo\Desktop\AGAIN\Debug\AGAIN.exe
+  AGAIN.vcxproj -> C:\Users\lenovo\Desktop\AGAIN\Debug\AGAIN.pdb (Partial PDB)

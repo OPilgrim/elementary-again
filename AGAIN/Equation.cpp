@@ -7,7 +7,7 @@
 #include<string>
 #include<stdlib.h>
 #include<sstream>
-#include <stack>
+#include<stack>
 using namespace std;
 class Rand rand_; //创建一个Random对象
 class File all_f;//创建一个File对象
@@ -161,8 +161,6 @@ void Equation::calculatResult()
 					calculate();
 				opstack.pop();
 			}
-			else if (S[i] == '=')
-				break;
 			else if (compare(S[i]) > compare(opstack.top()))  //比较优先级函数
 				opstack.push(S[i]);
 			else if (compare(S[i]) <= compare(opstack.top()))
@@ -170,7 +168,8 @@ void Equation::calculatResult()
 				calculate();  //运算函数
 				opstack.push(S[i]);
 			}
-			
+			else if (S[i] == '=')
+				break;
 		}
 	}
 	while (!opstack.top())
